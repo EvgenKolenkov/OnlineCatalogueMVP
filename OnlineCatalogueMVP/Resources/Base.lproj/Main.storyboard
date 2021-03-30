@@ -16,8 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="RZX-CE-UiM">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a75-BD-q6C">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -25,12 +29,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a75-BD-q6C" secondAttribute="trailing" id="2sC-KE-TbV"/>
-                            <constraint firstItem="a75-BD-q6C" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6sS-52-g8z"/>
+                            <constraint firstItem="RZX-CE-UiM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="6EV-9O-nsc"/>
+                            <constraint firstItem="a75-BD-q6C" firstAttribute="top" secondItem="RZX-CE-UiM" secondAttribute="bottom" id="6sS-52-g8z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="a75-BD-q6C" secondAttribute="bottom" id="bj8-8y-ehd"/>
+                            <constraint firstItem="RZX-CE-UiM" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="th6-yo-Pbh"/>
                             <constraint firstItem="a75-BD-q6C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wvJ-po-LpX"/>
+                            <constraint firstItem="RZX-CE-UiM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="z4a-IJ-FwU"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="RZX-CE-UiM" id="N9f-Bl-1tv"/>
                         <outlet property="tableView" destination="a75-BD-q6C" id="etM-R7-2eL"/>
                     </connections>
                 </viewController>

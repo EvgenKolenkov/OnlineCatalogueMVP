@@ -9,6 +9,7 @@ import UIKit
 
 class ItemsListViewController: UIViewController {
 
+    @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
 
 //    private let presenter = NewsPresenter()
@@ -29,6 +30,8 @@ class ItemsListViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 64
         tableView.tableFooterView = UIView()
+        
+        searchBar.delegate = self
     }
 
 }
@@ -52,4 +55,11 @@ extension ItemsListViewController: UITableViewDelegate {
        
        
    }
+}
+
+extension ItemsListViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        tableView.reloadData()
+    }
 }
