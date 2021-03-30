@@ -31,6 +31,8 @@
 		2A1F2C3A261348AF001154BC /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C39261348AF001154BC /* UIViewControllerExtension.swift */; };
 		2A1F2C3E261349A9001154BC /* SwiftyProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C3D261349A9001154BC /* SwiftyProgressHUD.swift */; };
 		2A1F2C4826135B9C001154BC /* RequestExecuter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C4726135B9C001154BC /* RequestExecuter.swift */; };
+		2A1F2C4F261368C1001154BC /* UrlRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C4E261368C1001154BC /* UrlRouter.swift */; };
+		2A1F2C5226136DF4001154BC /* URL+queryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C5126136DF4001154BC /* URL+queryItems.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		2A1F2C39261348AF001154BC /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		2A1F2C3D261349A9001154BC /* SwiftyProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyProgressHUD.swift; sourceTree = "<group>"; };
 		2A1F2C4726135B9C001154BC /* RequestExecuter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestExecuter.swift; sourceTree = "<group>"; };
+		2A1F2C4E261368C1001154BC /* UrlRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlRouter.swift; sourceTree = "<group>"; };
+		2A1F2C5126136DF4001154BC /* URL+queryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+queryItems.swift"; sourceTree = "<group>"; };
 		5AD1B57F89ACA20B35D74AF8 /* Pods-OnlineCatalogueMVP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineCatalogueMVP.debug.xcconfig"; path = "Target Support Files/Pods-OnlineCatalogueMVP/Pods-OnlineCatalogueMVP.debug.xcconfig"; sourceTree = "<group>"; };
 		A6B90C7616D7E4D05181BDD1 /* Pods_OnlineCatalogueMVP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnlineCatalogueMVP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC33F328281497DAAE0C7733 /* Pods-OnlineCatalogueMVP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineCatalogueMVP.release.xcconfig"; path = "Target Support Files/Pods-OnlineCatalogueMVP/Pods-OnlineCatalogueMVP.release.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				2A1F2BED261308EA001154BC /* UITableViewExtension.swift */,
+				2A1F2C5126136DF4001154BC /* URL+queryItems.swift */,
 				2A1F2C0626130B78001154BC /* String+localized.swift */,
 				2A1F2C0A26131073001154BC /* UIViewController+keyboard.swift */,
 				2A1F2C39261348AF001154BC /* UIViewControllerExtension.swift */,
@@ -181,6 +186,7 @@
 			children = (
 				2A1F2C142613395D001154BC /* RequestResultModel.swift */,
 				2A1F2C2526133D5A001154BC /* ApiService.swift */,
+				2A1F2C4E261368C1001154BC /* UrlRouter.swift */,
 				2A1F2C4726135B9C001154BC /* RequestExecuter.swift */,
 				2A1F2C1C261339AF001154BC /* ResponseModels */,
 			);
@@ -340,6 +346,7 @@
 				2A1F2C3E261349A9001154BC /* SwiftyProgressHUD.swift in Sources */,
 				2A1F2C1E261339DE001154BC /* CatalogueSearchResponseModel.swift in Sources */,
 				2A1F2C3326134848001154BC /* BasePresenter.swift in Sources */,
+				2A1F2C5226136DF4001154BC /* URL+queryItems.swift in Sources */,
 				2A1F2C2A26134180001154BC /* DetailedCatalogueItemResponseModel.swift in Sources */,
 				2A1F2BC72612FC2D001154BC /* SearchedItemsViewController.swift in Sources */,
 				2A1F2C3A261348AF001154BC /* UIViewControllerExtension.swift in Sources */,
@@ -349,6 +356,7 @@
 				2A1F2C1226133902001154BC /* SearchedItemDisplayedModel.swift in Sources */,
 				2A1F2C372613487B001154BC /* HandledVC.swift in Sources */,
 				2A1F2C152613395E001154BC /* RequestResultModel.swift in Sources */,
+				2A1F2C4F261368C1001154BC /* UrlRouter.swift in Sources */,
 				2A1F2C0726130B78001154BC /* String+localized.swift in Sources */,
 				2A1F2C0B26131073001154BC /* UIViewController+keyboard.swift in Sources */,
 				2A1F2C4826135B9C001154BC /* RequestExecuter.swift in Sources */,
