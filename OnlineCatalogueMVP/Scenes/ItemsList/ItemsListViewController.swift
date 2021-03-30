@@ -32,6 +32,8 @@ class ItemsListViewController: UIViewController {
         tableView.tableFooterView = UIView()
         
         searchBar.delegate = self
+        
+        autoDismissKeyboard()
     }
 
 }
@@ -59,7 +61,8 @@ extension ItemsListViewController: UITableViewDelegate {
 
 extension ItemsListViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
+        searchBar.resignFirstResponder()
+
         tableView.reloadData()
     }
 }
