@@ -15,7 +15,7 @@
 		2A1F2BE72613013F001154BC /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2BE52613013F001154BC /* ItemTableViewCell.swift */; };
 		2A1F2BE82613013F001154BC /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A1F2BE62613013F001154BC /* ItemTableViewCell.xib */; };
 		2A1F2BEE261308EA001154BC /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2BED261308EA001154BC /* UITableViewExtension.swift */; };
-		2A1F2BF12613093B001154BC /* String+localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2BF02613093B001154BC /* String+localized.swift */; };
+		2A1F2C0726130B78001154BC /* String+localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C0626130B78001154BC /* String+localized.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		2A1F2BE52613013F001154BC /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		2A1F2BE62613013F001154BC /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
 		2A1F2BED261308EA001154BC /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
-		2A1F2BF02613093B001154BC /* String+localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+localized.swift"; sourceTree = "<group>"; };
+		2A1F2C0626130B78001154BC /* String+localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+localized.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				2A1F2BED261308EA001154BC /* UITableViewExtension.swift */,
-				2A1F2BF02613093B001154BC /* String+localized.swift */,
+				2A1F2C0626130B78001154BC /* String+localized.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -197,7 +197,7 @@
 			files = (
 				2A1F2BC72612FC2D001154BC /* ItemsListViewController.swift in Sources */,
 				2A1F2BE72613013F001154BC /* ItemTableViewCell.swift in Sources */,
-				2A1F2BF12613093B001154BC /* String+localized.swift in Sources */,
+				2A1F2C0726130B78001154BC /* String+localized.swift in Sources */,
 				2A1F2BC32612FC2D001154BC /* AppDelegate.swift in Sources */,
 				2A1F2BEE261308EA001154BC /* UITableViewExtension.swift in Sources */,
 			);
