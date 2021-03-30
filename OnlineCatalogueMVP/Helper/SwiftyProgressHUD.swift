@@ -71,7 +71,7 @@ extension UIView {
 
 public class SwiftyProgressHUD: UIView {
     
-    let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+    let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
     let circleProgress = CircleProgressHUD()
     
     let backgroundView = UIView()

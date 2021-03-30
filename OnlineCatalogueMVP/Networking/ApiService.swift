@@ -6,12 +6,11 @@
 //
 
 import Foundation
-import Alamofire
 
 class ApiService: DataService {
     
-    func getSearchedData(urlString: String, _ completion: @escaping RequestResultHandler<CatalogueSearchResponseModel>) {
-        getSearchedApiData(urlString: urlString, completion)
+    func getSearchedData(searchedData: String, _ completion: @escaping RequestResultHandler<CatalogueSearchResponseModel>) {
+        getSearchedApiData(searchedData: searchedData, completion)
     }
     
     func getDetailedData(urlString: String, _ completion: @escaping RequestResultHandler<DetailedCatalogueItemResponseModel>) {
@@ -19,33 +18,21 @@ class ApiService: DataService {
     }
     
     // MARK: Private
-    private func getSearchedApiData(urlString: String, _ completion: @escaping RequestResultHandler<CatalogueSearchResponseModel>) {
-        AF.request(urlString)
-            .validate()
-            .responseDecodable(of: CatalogueSearchResponseModel.self) { response in
-                if let error = response.error {
-                    completion(RequestResult(error: error))
-                    return
-                }
-                if let catalogueSearchResult = response.value {
-                    completion(RequestResult(value: catalogueSearchResult))
-                    return
-                }
-            }
+    private func getSearchedApiData(searchedData: String, _ completion: @escaping RequestResultHandler<CatalogueSearchResponseModel>) {
+        
+        guard var baseUrl = URL(string: Constants.baseURL) else { return }
+        baseUrl.appendPathComponent("sites/MLU/search")
+        let queryItems = [URLQueryItem(name: "q", value: searchedData)]
+        guard var urlComps = URLComponents(url: baseUrl, resolvingAgainstBaseURL: true) else { return }
+        urlComps.queryItems = queryItems
+        guard let urlString = urlComps.url?.absoluteString else { return }
+        
+        executeRequest(urlString: urlString, completion)
     }
     
     private func getDetailededApiData(urlString: String, _ completion: @escaping RequestResultHandler<DetailedCatalogueItemResponseModel>) {
-        AF.request(urlString)
-            .validate()
-            .responseDecodable(of: DetailedCatalogueItemResponseModel.self) { response in
-                if let error = response.error {
-                    completion(RequestResult(error: error))
-                    return
-                }
-                if let detailedItem = response.value {
-                    completion(RequestResult(value: detailedItem))
-                    return
-                }
-            }
+        
+        
+        executeRequest(urlString: urlString, completion)
     }
 }

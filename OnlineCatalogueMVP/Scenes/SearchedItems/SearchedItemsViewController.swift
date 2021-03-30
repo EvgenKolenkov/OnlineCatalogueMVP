@@ -72,6 +72,6 @@ extension SearchedItemsViewController: UITableViewDelegate {
 extension SearchedItemsViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        presenter.searchCatalogueItems(urlString: searchBar.text!)
+        presenter.searchCatalogueItems(searchedText: searchBar.text!)
     }
 }

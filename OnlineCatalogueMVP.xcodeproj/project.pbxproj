@@ -20,7 +20,7 @@
 		2A1F2C0B26131073001154BC /* UIViewController+keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C0A26131073001154BC /* UIViewController+keyboard.swift */; };
 		2A1F2C0F26131432001154BC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C0E26131432001154BC /* Constants.swift */; };
 		2A1F2C1226133902001154BC /* SearchedItemDisplayedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C1126133902001154BC /* SearchedItemDisplayedModel.swift */; };
-		2A1F2C152613395E001154BC /* RequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C142613395D001154BC /* RequestResult.swift */; };
+		2A1F2C152613395E001154BC /* RequestResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C142613395D001154BC /* RequestResultModel.swift */; };
 		2A1F2C192613398E001154BC /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C182613398E001154BC /* DataService.swift */; };
 		2A1F2C1E261339DE001154BC /* CatalogueSearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C1D261339DE001154BC /* CatalogueSearchResponseModel.swift */; };
 		2A1F2C2626133D5A001154BC /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C2526133D5A001154BC /* ApiService.swift */; };
@@ -30,6 +30,7 @@
 		2A1F2C372613487B001154BC /* HandledVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C362613487B001154BC /* HandledVC.swift */; };
 		2A1F2C3A261348AF001154BC /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C39261348AF001154BC /* UIViewControllerExtension.swift */; };
 		2A1F2C3E261349A9001154BC /* SwiftyProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C3D261349A9001154BC /* SwiftyProgressHUD.swift */; };
+		2A1F2C4826135B9C001154BC /* RequestExecuter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C4726135B9C001154BC /* RequestExecuter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +48,7 @@
 		2A1F2C0A26131073001154BC /* UIViewController+keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+keyboard.swift"; sourceTree = "<group>"; };
 		2A1F2C0E26131432001154BC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2A1F2C1126133902001154BC /* SearchedItemDisplayedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedItemDisplayedModel.swift; sourceTree = "<group>"; };
-		2A1F2C142613395D001154BC /* RequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestResult.swift; sourceTree = "<group>"; };
+		2A1F2C142613395D001154BC /* RequestResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestResultModel.swift; sourceTree = "<group>"; };
 		2A1F2C182613398E001154BC /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		2A1F2C1D261339DE001154BC /* CatalogueSearchResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueSearchResponseModel.swift; sourceTree = "<group>"; };
 		2A1F2C2526133D5A001154BC /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
@@ -57,6 +58,7 @@
 		2A1F2C362613487B001154BC /* HandledVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandledVC.swift; sourceTree = "<group>"; };
 		2A1F2C39261348AF001154BC /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		2A1F2C3D261349A9001154BC /* SwiftyProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyProgressHUD.swift; sourceTree = "<group>"; };
+		2A1F2C4726135B9C001154BC /* RequestExecuter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestExecuter.swift; sourceTree = "<group>"; };
 		5AD1B57F89ACA20B35D74AF8 /* Pods-OnlineCatalogueMVP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineCatalogueMVP.debug.xcconfig"; path = "Target Support Files/Pods-OnlineCatalogueMVP/Pods-OnlineCatalogueMVP.debug.xcconfig"; sourceTree = "<group>"; };
 		A6B90C7616D7E4D05181BDD1 /* Pods_OnlineCatalogueMVP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnlineCatalogueMVP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC33F328281497DAAE0C7733 /* Pods-OnlineCatalogueMVP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineCatalogueMVP.release.xcconfig"; path = "Target Support Files/Pods-OnlineCatalogueMVP/Pods-OnlineCatalogueMVP.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,7 +142,6 @@
 				2A1F2BC82612FC2D001154BC /* Main.storyboard */,
 				2A1F2BCB2612FC2F001154BC /* Assets.xcassets */,
 				2A1F2BCD2612FC2F001154BC /* LaunchScreen.storyboard */,
-				2A1F2C0E26131432001154BC /* Constants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -178,8 +179,9 @@
 		2A1F2C0D261313D4001154BC /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				2A1F2C142613395D001154BC /* RequestResult.swift */,
+				2A1F2C142613395D001154BC /* RequestResultModel.swift */,
 				2A1F2C2526133D5A001154BC /* ApiService.swift */,
+				2A1F2C4726135B9C001154BC /* RequestExecuter.swift */,
 				2A1F2C1C261339AF001154BC /* ResponseModels */,
 			);
 			path = Networking;
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				2A1F2C3D261349A9001154BC /* SwiftyProgressHUD.swift */,
+				2A1F2C0E26131432001154BC /* Constants.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -345,9 +348,10 @@
 				2A1F2BE72613013F001154BC /* ItemTableViewCell.swift in Sources */,
 				2A1F2C1226133902001154BC /* SearchedItemDisplayedModel.swift in Sources */,
 				2A1F2C372613487B001154BC /* HandledVC.swift in Sources */,
-				2A1F2C152613395E001154BC /* RequestResult.swift in Sources */,
+				2A1F2C152613395E001154BC /* RequestResultModel.swift in Sources */,
 				2A1F2C0726130B78001154BC /* String+localized.swift in Sources */,
 				2A1F2C0B26131073001154BC /* UIViewController+keyboard.swift in Sources */,
+				2A1F2C4826135B9C001154BC /* RequestExecuter.swift in Sources */,
 				2A1F2C0F26131432001154BC /* Constants.swift in Sources */,
 				2A1F2BC32612FC2D001154BC /* AppDelegate.swift in Sources */,
 				2A1F2BEE261308EA001154BC /* UITableViewExtension.swift in Sources */,

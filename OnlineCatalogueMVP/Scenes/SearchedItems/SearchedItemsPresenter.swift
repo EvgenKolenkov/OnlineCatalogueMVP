@@ -17,10 +17,10 @@ class SearchedItemsPresenter: BasePresenter {
         self.dataService = dataService
     }
     
-    func searchCatalogueItems(urlString: String) {
+    func searchCatalogueItems(searchedText: String) {
         handleSpinner?(true)
         
-        dataService.getSearchedData(urlString: urlString, { [weak self] result in
+        dataService.getSearchedData(searchedData: searchedText, { [weak self] result in
             self?.handleSpinner?(false)
 
             if let error = result.error {

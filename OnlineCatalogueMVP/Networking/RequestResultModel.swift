@@ -1,5 +1,5 @@
 //
-//  RequestResult.swift
+//  RequestResultModel.swift
 //  OnlineCatalogueMVP
 //
 //  Created by Evgeniy Kolenkov on 30.03.2021.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RequestResult<T> {
+struct RequestResultModel<T> {
     
     let error: Error?
     let value: T?
