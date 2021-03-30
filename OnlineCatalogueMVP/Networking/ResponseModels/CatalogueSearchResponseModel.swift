@@ -24,5 +24,6 @@ struct PagingResponseModel: Decodable {
 struct CatalogueItemResponseModel: Decodable {
     let id: String?
     let title: String?
+    let price: Double?
     let thumbnailUrlString: String?
 }

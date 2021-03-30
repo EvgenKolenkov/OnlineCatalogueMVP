@@ -1,5 +1,5 @@
 //
-//  ItemsListViewController.swift
+//  SearchedItemsViewController.swift
 //  OnlineCatalogueMVP
 //
 //  Created by Evgeniy Kolenkov on 30.03.2021.
@@ -7,19 +7,23 @@
 
 import UIKit
 
-class ItemsListViewController: UIViewController {
+class SearchedItemsViewController: UIViewController, HandledVC {
 
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
 
-//    private let presenter = NewsPresenter()
-    private var dataSource: [String] = []
-    
+    private let presenter = SearchedItemsPresenter(dataService: ApiService())
+    private lazy var dataSource: [SearchedItemDisplayedModel] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewsOnLoad()
+        setupPresenter()
     }
-
 
     // MARK: Private
     private func setupViewsOnLoad() {
@@ -36,9 +40,15 @@ class ItemsListViewController: UIViewController {
         autoDismissKeyboard()
     }
 
+    private func setupPresenter() {
+        presenter.connect(with: self)
+        presenter.dataSourceCallback = { [weak self] dataSource in
+            self?.dataSource = dataSource
+        }
+    }
 }
 
-extension ItemsListViewController: UITableViewDataSource {
+extension SearchedItemsViewController: UITableViewDataSource {
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        dataSource.count
    }
@@ -50,7 +60,7 @@ extension ItemsListViewController: UITableViewDataSource {
    }
 }
  
-extension ItemsListViewController: UITableViewDelegate {
+extension SearchedItemsViewController: UITableViewDelegate {
 
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        tableView.deselectRow(at: indexPath, animated: false)
@@ -59,10 +69,9 @@ extension ItemsListViewController: UITableViewDelegate {
    }
 }
 
-extension ItemsListViewController: UISearchBarDelegate {
+extension SearchedItemsViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-
-        tableView.reloadData()
+        presenter.searchCatalogueItems(urlString: searchBar.text!)
     }
 }

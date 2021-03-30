@@ -21,8 +21,12 @@ class ItemTableViewCell: UITableViewCell {
         titleLabel.textColor = .secondaryLabel
     }
 
-    func configureWith(model: String) {
-        titleLabel.text = model
-        priceLabel.text = model
+    func configureWith(model: SearchedItemDisplayedModel) {
+        titleLabel.text = model.title
+        if let price = model.price {
+            priceLabel.text = String(price)
+        } else {
+            priceLabel.text = "-"
+        }
     }
 }
