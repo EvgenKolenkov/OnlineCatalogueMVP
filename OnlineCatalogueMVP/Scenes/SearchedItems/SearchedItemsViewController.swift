@@ -42,7 +42,7 @@ class SearchedItemsViewController: UIViewController, HandledVC {
 
     private func setupPresenter() {
         presenter.connect(with: self)
-        presenter.dataSourceCallback = { [weak self] dataSource in
+        presenter.searchedItemsCallback = { [weak self] dataSource in
             self?.dataSource = dataSource
         }
     }

@@ -25,5 +25,6 @@ struct CatalogueItemResponseModel: Decodable {
     let id: String?
     let title: String?
     let price: Double?
-    let thumbnailUrlString: String?
+    let currency_id: String?
+    let thumbnail: String?
 }

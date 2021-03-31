@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class ItemTableViewCell: UITableViewCell {
 
@@ -23,10 +24,15 @@ class ItemTableViewCell: UITableViewCell {
 
     func configureWith(model: SearchedItemDisplayedModel) {
         titleLabel.text = model.title
-        if let price = model.price {
-            priceLabel.text = String(price)
+        if let price = model.price,
+           let currency = model.currency {
+            priceLabel.text = String(price) + " " + currency
         } else {
             priceLabel.text = "-"
+        }
+        if let urlString = model.thumbnailUrlString,
+           let url = URL(string: urlString) {
+            thumbnailImageView.af.setImage(withURL: url)
         }
     }
 }
