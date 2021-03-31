@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  OnlineCatalogueMVP
+
+  Created by Evgeniy Kolenkov on 31.03.2021.
+  
+*/
+
+"List of products" = "Lista de productos";
+"Search for products, brands and more..." = "Busque productos, marcas y más...";
+"Nothing was found" = "No se encontró nada";
+"Detail information" = "Información detallada";
+"Last visited" = "Última visita";

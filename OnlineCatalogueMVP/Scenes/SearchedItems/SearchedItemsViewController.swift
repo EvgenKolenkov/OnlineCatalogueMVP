@@ -31,7 +31,7 @@ class SearchedItemsViewController: UIViewController, HandledVC {
 
     // MARK: Private
     private func setupViewsOnLoad() {
-        self.title = "List of products".localized
+        self.title = Locals.searchTitle
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -40,11 +40,11 @@ class SearchedItemsViewController: UIViewController, HandledVC {
         tableView.tableFooterView = UIView()
         
         searchBar.delegate = self
-        searchBar.placeholder = "Search for products, brands and more...".localized
+        searchBar.placeholder = Locals.searchPlaceholder
         
         noDataLabel.font = UIFont.systemFont(ofSize: 15)
         noDataLabel.textColor = .secondaryLabel
-        noDataLabel.text = "Nothing was found".localized
+        noDataLabel.text = Locals.noData
         noDataLabel.isHidden = true
         
         autoDismissKeyboard()

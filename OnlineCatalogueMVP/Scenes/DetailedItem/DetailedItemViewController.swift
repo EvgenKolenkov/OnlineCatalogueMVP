@@ -32,7 +32,7 @@ class DetailedItemViewController: UIViewController, HandledVC {
 
     // MARK: Private
     private func setupViewsOnLoad() {
-        self.title = "Detail information".localized
+        self.title = Locals.detailsTitle
         
         titleLabel.font = UIFont.systemFont(ofSize: 20)
         titleLabel.textColor = .label
@@ -54,7 +54,7 @@ class DetailedItemViewController: UIViewController, HandledVC {
         
         lastVisitedLabel.font = UIFont.systemFont(ofSize: 15)
         lastVisitedLabel.textColor = .label
-        lastVisitedLabel.text = "Last visited".localized
+        lastVisitedLabel.text = Locals.lastVisited
     }
 
     private func setupDataOnLoad() {
