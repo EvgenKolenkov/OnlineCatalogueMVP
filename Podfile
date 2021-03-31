@@ -8,6 +8,5 @@ target 'OnlineCatalogueMVP' do
   # Pods for OnlineCatalogueMVP
     pod 'Alamofire'
     pod 'AlamofireImage'
-    pod 'NVActivityIndicatorView'
 
 end

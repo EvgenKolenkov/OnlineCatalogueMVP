@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import NVActivityIndicatorView
 
 protocol HandledVC {
     var handleError: (Error) -> Void { get }
