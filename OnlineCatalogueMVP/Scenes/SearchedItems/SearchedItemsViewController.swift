@@ -11,7 +11,8 @@ class SearchedItemsViewController: UIViewController, HandledVC {
 
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
-
+    @IBOutlet private weak var noDataLabel: UILabel!
+    
     private let presenter = SearchedItemsPresenter(dataService: ApiService())
     private lazy var dataSource: [SearchedItemDisplayedModel] = [] {
         didSet {
@@ -37,6 +38,12 @@ class SearchedItemsViewController: UIViewController, HandledVC {
         tableView.tableFooterView = UIView()
         
         searchBar.delegate = self
+        searchBar.placeholder = "Search for products, brands and more...".localized
+        
+        noDataLabel.font = UIFont.systemFont(ofSize: 15)
+        noDataLabel.textColor = .secondaryLabel
+        noDataLabel.text = "Nothing was found".localized
+        noDataLabel.isHidden = true
         
         autoDismissKeyboard()
     }
@@ -45,6 +52,7 @@ class SearchedItemsViewController: UIViewController, HandledVC {
         presenter.connect(with: self)
         presenter.searchedItemsCallback = { [weak self] dataSource in
             self?.dataSource = dataSource
+            self?.noDataLabel.isHidden = !dataSource.isEmpty
         }
     }
 }

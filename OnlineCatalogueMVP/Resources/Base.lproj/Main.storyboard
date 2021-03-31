@@ -24,6 +24,12 @@
                                 <rect key="frame" x="0.0" y="144" width="414" height="718"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTA-PJ-iVF">
+                                <rect key="frame" x="20.5" y="493" width="373" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -31,7 +37,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a75-BD-q6C" secondAttribute="trailing" id="2sC-KE-TbV"/>
                             <constraint firstItem="RZX-CE-UiM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="6EV-9O-nsc"/>
                             <constraint firstItem="a75-BD-q6C" firstAttribute="top" secondItem="RZX-CE-UiM" secondAttribute="bottom" id="6sS-52-g8z"/>
+                            <constraint firstItem="oTA-PJ-iVF" firstAttribute="width" secondItem="a75-BD-q6C" secondAttribute="width" multiplier="0.9" id="GaT-3D-Byk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="a75-BD-q6C" secondAttribute="bottom" id="bj8-8y-ehd"/>
+                            <constraint firstItem="oTA-PJ-iVF" firstAttribute="centerX" secondItem="a75-BD-q6C" secondAttribute="centerX" id="e5P-bb-fse"/>
+                            <constraint firstItem="oTA-PJ-iVF" firstAttribute="centerY" secondItem="a75-BD-q6C" secondAttribute="centerY" id="eNj-Rc-vrj"/>
                             <constraint firstItem="RZX-CE-UiM" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="th6-yo-Pbh"/>
                             <constraint firstItem="a75-BD-q6C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wvJ-po-LpX"/>
                             <constraint firstItem="RZX-CE-UiM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="z4a-IJ-FwU"/>
@@ -39,6 +48,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="6dG-C3-GOf"/>
                     <connections>
+                        <outlet property="noDataLabel" destination="oTA-PJ-iVF" id="9pR-LY-Jta"/>
                         <outlet property="searchBar" destination="RZX-CE-UiM" id="N9f-Bl-1tv"/>
                         <outlet property="tableView" destination="a75-BD-q6C" id="etM-R7-2eL"/>
                     </connections>
