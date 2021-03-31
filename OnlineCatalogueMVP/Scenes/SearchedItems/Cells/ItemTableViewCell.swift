@@ -19,7 +19,7 @@ class ItemTableViewCell: UITableViewCell {
         titleLabel.font = UIFont.systemFont(ofSize: 17)
         titleLabel.textColor = .label
         priceLabel.font = UIFont.systemFont(ofSize: 15)
-        titleLabel.textColor = .secondaryLabel
+        priceLabel.textColor = .secondaryLabel
     }
 
     func configureWith(model: SearchedItemDisplayedModel) {

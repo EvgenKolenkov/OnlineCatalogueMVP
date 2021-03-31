@@ -7,12 +7,13 @@
 
 import Foundation
 
+private typealias SearchResponse = RequestResultModel<CatalogueSearchResponseModel>
+
 class SearchedItemsPresenter: BasePresenter {
     
     private var dataService: DataService
     
     var searchedItemsCallback: (([SearchedItemDisplayedModel]) -> Void)?
-//    var detailedItemCallback: (([SearchedItemDisplayedModel]) -> Void)?
 
     init(dataService: DataService) {
         self.dataService = dataService
@@ -21,7 +22,7 @@ class SearchedItemsPresenter: BasePresenter {
     func searchCatalogueItems(searchedText: String) {
         handleSpinner?(true)
         
-        dataService.getSearchedData(searchedData: searchedText) { [weak self] result in
+        dataService.getSearchedData(searchedData: searchedText) { [weak self] (result: SearchResponse) in
             self?.handleSpinner?(false)
 
             if let error = result.error {
@@ -34,6 +35,6 @@ class SearchedItemsPresenter: BasePresenter {
             self?.searchedItemsCallback?(value.compactMap({
                 return SearchedItemDisplayedModel(responseModel: $0)
             }))
-        })
+        }
     }
 }

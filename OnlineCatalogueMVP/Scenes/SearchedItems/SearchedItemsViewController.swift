@@ -15,6 +15,7 @@ class SearchedItemsViewController: UIViewController, HandledVC {
     private let presenter = SearchedItemsPresenter(dataService: ApiService())
     private lazy var dataSource: [SearchedItemDisplayedModel] = [] {
         didSet {
+            tableView.scroll(to: .top, animated: true)
             tableView.reloadData()
         }
     }
@@ -61,12 +62,14 @@ extension SearchedItemsViewController: UITableViewDataSource {
 }
  
 extension SearchedItemsViewController: UITableViewDelegate {
-
-   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       tableView.deselectRow(at: indexPath, animated: false)
-       
-       
-   }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        let detailedItemVC = DetailedItemViewController.instantiate(from: .main)
+        detailedItemVC.displayedModel = dataSource[indexPath.row]
+        navigationController?.pushViewController(detailedItemVC, animated: true)
+    }
 }
 
 extension SearchedItemsViewController: UISearchBarDelegate {
