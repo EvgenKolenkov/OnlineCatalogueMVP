@@ -9,10 +9,13 @@ import Foundation
 
 enum UrlRouter: String {
     case search = "sites/MLU/search"
-    case details = "items/id"
     case descriptions = "items/id/descriptions"
     
+    private var baseURL: String {
+        "https://api.mercadolibre.com"
+    }
+    
     var url: URL? {
-        return URL(string: Constants.baseURL)?.appendingPathComponent(self.rawValue)
+        return URL(string: baseURL)?.appendingPathComponent(self.rawValue)
     }
 }

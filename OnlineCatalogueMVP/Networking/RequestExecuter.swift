@@ -10,18 +10,20 @@ import Alamofire
 
 typealias RequestResultHandler<T> = (RequestResultModel<T>) -> Void
 
-func executeRequest<T: Decodable>(urlString: String, _ completion: @escaping RequestResultHandler<T>) {
-    AF.request(urlString)
-        .validate()
-        .responseDecodable(of: T.self) { response in
-            if let error = response.error {
-                completion(RequestResultModel(error: error))
-                return
+class RequestExecuter {
+    
+    func executeRequest<T: Decodable>(urlString: String, _ completion: @escaping RequestResultHandler<T>) {
+        AF.request(urlString)
+            .validate()
+            .responseDecodable(of: T.self) { response in
+                if let error = response.error {
+                    completion(RequestResultModel(error: error))
+                    return
+                }
+                if let value = response.value {
+                    completion(RequestResultModel(value: value))
+                    return
+                }
             }
-            if let value = response.value {
-                completion(RequestResultModel(value: value))
-                return
-            }
-        }
+    }
 }
-

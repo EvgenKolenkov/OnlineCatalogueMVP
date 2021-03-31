@@ -9,20 +9,26 @@ import Foundation
 
 class ApiService: DataService {
     
-    func getSearchedData(searchedData: String, _ completion: @escaping RequestResultHandler<CatalogueSearchResponseModel>) {
+    private let requestExecuter: RequestExecuter
+    
+    init(requestExecuter: RequestExecuter = RequestExecuter()) {
+        self.requestExecuter = requestExecuter
+    }
+    
+    func getSearchedData<T: Decodable>(searchedData: String, _ completion: @escaping RequestResultHandler<T>) {
         
         guard let url = UrlRouter.search.url,
               let urlString = url.appending(queryItem: "q", value: searchedData)?.absoluteString
         else { return }
         
-        executeRequest(urlString: urlString, completion)
+        requestExecuter.executeRequest(urlString: urlString, completion)
     }
     
-    func getDetailedData(id: String, _ completion: @escaping RequestResultHandler<DetailedCatalogueItemResponseModel>) {
+    func getDetailedData<T: Decodable>(id: String, _ completion: @escaping RequestResultHandler<T>) {
         
-        guard let url = UrlRouter.details.url else { return }
-        let urlString = url.appendingPathComponent(id).absoluteString
+        guard let url = UrlRouter.descriptions.url else { return }
+        let urlString = url.absoluteString.replacingOccurrences(of: "id", with: id)
 
-        executeRequest(urlString: urlString, completion)
+        requestExecuter.executeRequest(urlString: urlString, completion)
     }
 }
