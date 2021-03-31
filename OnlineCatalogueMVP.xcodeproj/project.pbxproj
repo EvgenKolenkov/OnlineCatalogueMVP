@@ -36,6 +36,7 @@
 		2A1F2C6926145E5E001154BC /* DetailedItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C6826145E5E001154BC /* DetailedItemPresenter.swift */; };
 		2A1F2C6D261460F4001154BC /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C6C261460F4001154BC /* Storyboarded.swift */; };
 		2A1F2C702614611D001154BC /* UIViewController+storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C6F2614611D001154BC /* UIViewController+storyboard.swift */; };
+		2A1F2C7E2614A21C001154BC /* SelfSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C7D2614A21C001154BC /* SelfSizedTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		2A1F2C6826145E5E001154BC /* DetailedItemPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedItemPresenter.swift; sourceTree = "<group>"; };
 		2A1F2C6C261460F4001154BC /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		2A1F2C6F2614611D001154BC /* UIViewController+storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+storyboard.swift"; sourceTree = "<group>"; };
+		2A1F2C7D2614A21C001154BC /* SelfSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizedTableView.swift; sourceTree = "<group>"; };
 		5AD1B57F89ACA20B35D74AF8 /* Pods-OnlineCatalogueMVP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineCatalogueMVP.debug.xcconfig"; path = "Target Support Files/Pods-OnlineCatalogueMVP/Pods-OnlineCatalogueMVP.debug.xcconfig"; sourceTree = "<group>"; };
 		A6B90C7616D7E4D05181BDD1 /* Pods_OnlineCatalogueMVP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnlineCatalogueMVP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC33F328281497DAAE0C7733 /* Pods-OnlineCatalogueMVP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineCatalogueMVP.release.xcconfig"; path = "Target Support Files/Pods-OnlineCatalogueMVP/Pods-OnlineCatalogueMVP.release.xcconfig"; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				2A1F2C3D261349A9001154BC /* SwiftyProgressHUD.swift */,
+				2A1F2C7D2614A21C001154BC /* SelfSizedTableView.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				2A1F2C30261347CF001154BC /* SearchedItemsPresenter.swift in Sources */,
 				2A1F2BE72613013F001154BC /* ItemTableViewCell.swift in Sources */,
 				2A1F2C6926145E5E001154BC /* DetailedItemPresenter.swift in Sources */,
+				2A1F2C7E2614A21C001154BC /* SelfSizedTableView.swift in Sources */,
 				2A1F2C1226133902001154BC /* SearchedItemDisplayedModel.swift in Sources */,
 				2A1F2C372613487B001154BC /* HandledVC.swift in Sources */,
 				2A1F2C152613395E001154BC /* RequestResultModel.swift in Sources */,

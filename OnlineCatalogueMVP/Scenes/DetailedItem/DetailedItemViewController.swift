@@ -15,12 +15,13 @@ class DetailedItemViewController: UIViewController, HandledVC {
     @IBOutlet private weak var pictureImageView: UIImageView!
     @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var descriptionTextView: UITextView!
-    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: SelfSizedTableView!
     
     private let presenter = DetailedItemPresenter(dataService: ApiService())
 
     var displayedModel: SearchedItemDisplayedModel?
-    
+    lazy var dataSource: [SearchedItemDisplayedModel] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewsOnLoad()
@@ -44,8 +45,8 @@ class DetailedItemViewController: UIViewController, HandledVC {
         descriptionTextView.font = UIFont.systemFont(ofSize: 13)
         descriptionTextView.textColor = .secondaryLabel
 
-//        tableView.delegate = self
-//        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 500
         tableView.tableFooterView = UIView()
@@ -80,25 +81,23 @@ class DetailedItemViewController: UIViewController, HandledVC {
     }
 }
 
-//extension DetailedItemViewController: UITableViewDataSource {
-//   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//       dataSource.count
-//   }
-//
-//   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//       let cell = tableView.getCell(ofType: ItemTableViewCell.self)
-//        if let model = displayedModel {
-//            cell.configureWith(model: model)
-//        }
-//       return cell
-//   }
-//}
-//
-//extension DetailedItemViewController: UITableViewDelegate {
-//
-//   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//       tableView.deselectRow(at: indexPath, animated: false)
-//
-//
-//   }
-//}
+extension DetailedItemViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        dataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.getCell(ofType: ItemTableViewCell.self)
+        cell.configureWith(model: dataSource[indexPath.row])
+        return cell
+    }
+}
+
+extension DetailedItemViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        
+    }
+}

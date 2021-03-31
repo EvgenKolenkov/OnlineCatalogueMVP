@@ -21,6 +21,8 @@ class SearchedItemsViewController: UIViewController, HandledVC {
         }
     }
 
+    private lazy var lastVisitedDataSource: [SearchedItemDisplayedModel] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewsOnLoad()
@@ -74,8 +76,11 @@ extension SearchedItemsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         
+        lastVisitedDataSource.append(dataSource[indexPath.row])
+        
         let detailedItemVC = DetailedItemViewController.instantiate(from: .main)
         detailedItemVC.displayedModel = dataSource[indexPath.row]
+        detailedItemVC.dataSource = lastVisitedDataSource
         navigationController?.pushViewController(detailedItemVC, animated: true)
     }
 }

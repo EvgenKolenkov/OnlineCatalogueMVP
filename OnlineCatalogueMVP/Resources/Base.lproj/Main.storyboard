@@ -69,7 +69,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcv-UU-STL">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="847.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="627.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfI-ep-xOr">
                                                 <rect key="frame" x="20.5" y="10" width="373" height="20.5"/>
@@ -102,12 +102,15 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wbm-jR-QHn">
-                                                <rect key="frame" x="18" y="617.5" width="378" height="220"/>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wbm-jR-QHn" customClass="SelfSizedTableView" customModule="OnlineCatalogueMVP" customModuleProvider="target">
+                                                <rect key="frame" x="18" y="617.5" width="378" height="0.0"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="220" id="p2q-qr-qel"/>
+                                                    <constraint firstAttribute="height" id="p2q-qr-qel"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outlet property="heightConstraint" destination="p2q-qr-qel" id="rEY-ep-lDF"/>
+                                                </connections>
                                             </tableView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
