@@ -8,10 +8,10 @@
 import Foundation
 
 struct DetailedCatalogueItemResponseModel: Decodable {
-    let official_store_id: String?
+    let catalog_product_id: String?
     let title: String?
     let descriptions: [CatalogueItemDescription]?
-    let price: Int?
+    let price: Double?
     let pictures: [CatalogueItemPicture]?
 }
 
@@ -25,8 +25,8 @@ struct CatalogueItemPicture: Decodable {
 }
 
 struct CatalogueItemDescription: Decodable {
+    let id: String?
+    let created: String?
     let text: String?
     let plain_text: String?
-    let last_updated: String?
-    let date_created: String?
 }

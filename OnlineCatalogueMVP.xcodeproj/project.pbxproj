@@ -33,6 +33,7 @@
 		2A1F2C4826135B9C001154BC /* RequestExecuter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C4726135B9C001154BC /* RequestExecuter.swift */; };
 		2A1F2C4F261368C1001154BC /* UrlRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C4E261368C1001154BC /* UrlRouter.swift */; };
 		2A1F2C5226136DF4001154BC /* URL+queryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C5126136DF4001154BC /* URL+queryItems.swift */; };
+		2A1F2C5B26145246001154BC /* DetailedItemDisplayedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C5A26145246001154BC /* DetailedItemDisplayedModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		2A1F2C4726135B9C001154BC /* RequestExecuter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestExecuter.swift; sourceTree = "<group>"; };
 		2A1F2C4E261368C1001154BC /* UrlRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlRouter.swift; sourceTree = "<group>"; };
 		2A1F2C5126136DF4001154BC /* URL+queryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+queryItems.swift"; sourceTree = "<group>"; };
+		2A1F2C5A26145246001154BC /* DetailedItemDisplayedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedItemDisplayedModel.swift; sourceTree = "<group>"; };
 		5AD1B57F89ACA20B35D74AF8 /* Pods-OnlineCatalogueMVP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineCatalogueMVP.debug.xcconfig"; path = "Target Support Files/Pods-OnlineCatalogueMVP/Pods-OnlineCatalogueMVP.debug.xcconfig"; sourceTree = "<group>"; };
 		A6B90C7616D7E4D05181BDD1 /* Pods_OnlineCatalogueMVP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnlineCatalogueMVP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC33F328281497DAAE0C7733 /* Pods-OnlineCatalogueMVP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineCatalogueMVP.release.xcconfig"; path = "Target Support Files/Pods-OnlineCatalogueMVP/Pods-OnlineCatalogueMVP.release.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		2A1F2BDA2612FD9B001154BC /* DetailedItem */ = {
 			isa = PBXGroup;
 			children = (
+				2A1F2C5A26145246001154BC /* DetailedItemDisplayedModel.swift */,
 			);
 			path = DetailedItem;
 			sourceTree = "<group>";
@@ -162,9 +165,9 @@
 		2A1F2BE32613003E001154BC /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2A1F2C3226134848001154BC /* BasePresenter.swift */,
 				2A1F2BD92612FD93001154BC /* SearchedItems */,
 				2A1F2BDA2612FD9B001154BC /* DetailedItem */,
-				2A1F2C3226134848001154BC /* BasePresenter.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				2A1F2C5226136DF4001154BC /* URL+queryItems.swift in Sources */,
 				2A1F2C2A26134180001154BC /* DetailedCatalogueItemResponseModel.swift in Sources */,
 				2A1F2BC72612FC2D001154BC /* SearchedItemsViewController.swift in Sources */,
+				2A1F2C5B26145246001154BC /* DetailedItemDisplayedModel.swift in Sources */,
 				2A1F2C3A261348AF001154BC /* UIViewControllerExtension.swift in Sources */,
 				2A1F2C2626133D5A001154BC /* ApiService.swift in Sources */,
 				2A1F2C30261347CF001154BC /* SearchedItemsPresenter.swift in Sources */,
