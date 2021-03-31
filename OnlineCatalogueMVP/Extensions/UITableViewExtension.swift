@@ -7,6 +7,10 @@
 
 import UIKit
 
+enum ScrollDirection {
+    case top, bottom
+}
+
 extension UITableView {
     
     func getCell<T>(ofType type: T.Type) -> T {
@@ -40,10 +44,6 @@ extension UITableView {
                 break
             }
         }
-    }
-
-    enum ScrollDirection {
-        case top, bottom
     }
     
     public func reloadData(_ completion: @escaping ()->()) {

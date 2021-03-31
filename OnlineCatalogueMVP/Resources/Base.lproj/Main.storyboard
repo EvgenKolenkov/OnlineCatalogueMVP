@@ -170,6 +170,7 @@
                         <outlet property="pictureImageView" destination="32I-3v-O3h" id="RZw-6i-c3e"/>
                         <outlet property="priceLabel" destination="oP7-wz-GFs" id="BOD-fr-myK"/>
                         <outlet property="productNumberLabel" destination="7x9-ow-9dA" id="kGY-2g-r8U"/>
+                        <outlet property="scrollView" destination="UKD-FB-UEL" id="gO0-4p-O3p"/>
                         <outlet property="tableView" destination="Wbm-jR-QHn" id="lYm-og-QQn"/>
                         <outlet property="titleLabel" destination="mfI-ep-xOr" id="n3N-mv-Ikt"/>
                     </connections>

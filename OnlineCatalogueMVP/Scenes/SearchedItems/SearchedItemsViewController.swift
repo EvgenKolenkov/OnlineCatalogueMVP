@@ -20,7 +20,6 @@ class SearchedItemsViewController: UIViewController, HandledVC {
             tableView.reloadData()
         }
     }
-
     private lazy var lastVisitedDataSource: [SearchedItemDisplayedModel] = []
     
     override func viewDidLoad() {

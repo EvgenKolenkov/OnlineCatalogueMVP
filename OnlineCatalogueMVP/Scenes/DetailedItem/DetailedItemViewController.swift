@@ -17,10 +17,15 @@ class DetailedItemViewController: UIViewController, HandledVC {
     @IBOutlet private weak var descriptionTextView: UITextView!
     @IBOutlet private weak var tableView: SelfSizedTableView!
     @IBOutlet private weak var lastVisitedLabel: UILabel!
+    @IBOutlet private weak var scrollView: UIScrollView!
     
     private let presenter = DetailedItemPresenter(dataService: ApiService())
-    private lazy var dataSource: [SearchedItemDisplayedModel] = []
-
+    private lazy var dataSource: [SearchedItemDisplayedModel] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     var displayedModel: SearchedItemDisplayedModel?
 
     override func viewDidLoad() {
@@ -73,6 +78,15 @@ class DetailedItemViewController: UIViewController, HandledVC {
             }
         }
         retrieveItemsFromStorage()
+        scrollView.scrollToTop()
+    }
+    
+    private func setupPresenter() {
+        presenter.connect(with: self)
+        presenter.detailedItemCallback = { [weak self] description in
+            self?.descriptionTextView.text = description
+        }
+        getItemDetails()
     }
     
     private func retrieveItemsFromStorage() {
@@ -85,11 +99,38 @@ class DetailedItemViewController: UIViewController, HandledVC {
         }
     }
     
-    private func setupPresenter() {
-        presenter.connect(with: self)
-        presenter.detailedItemCallback = { [weak self] description in
-            self?.descriptionTextView.text = description
+    private func saveItemsToStorage(by indexPath: IndexPath) {
+        let userDefaults = UserDefaults.standard
+        do {
+            let lastVisited = try userDefaults.getObject(forKey: UserDefaultsKeys.lastVisited.rawValue, castTo: [SearchedItemDisplayedModel].self)
+            dataSource = lastVisited
+        } catch {
+            print(error.localizedDescription)
         }
+        if !dataSource.contains(where: { $0.id == dataSource[indexPath.row].id }) {
+            dataSource.insert(dataSource[indexPath.row], at: 0)
+        } else {
+            let updatedItem = dataSource.remove(at: indexPath.row)
+            dataSource.insert(updatedItem, at: 0)
+        }
+        if dataSource.count > 5 {
+            dataSource = dataSource.dropLast()
+        }
+        do {
+            try userDefaults.setObject(dataSource, forKey: UserDefaultsKeys.lastVisited.rawValue)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    private func updateDetailsAndStorage(by indexPath: IndexPath) {
+        displayedModel = dataSource[indexPath.row]
+        saveItemsToStorage(by: indexPath)
+        setupDataOnLoad()
+        getItemDetails()
+    }
+    
+    private func getItemDetails() {
         if let model = displayedModel,
            let id = model.id {
             presenter.getCatalogueItemDetails(id: id)
@@ -110,10 +151,9 @@ extension DetailedItemViewController: UITableViewDataSource {
 }
 
 extension DetailedItemViewController: UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         
-        
+        updateDetailsAndStorage(by: indexPath)
     }
 }

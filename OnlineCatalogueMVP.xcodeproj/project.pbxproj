@@ -41,6 +41,7 @@
 		2A6B40042614F383001A953B /* UserDefaults+ObjectSavable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6B40032614F382001A953B /* UserDefaults+ObjectSavable.swift */; };
 		2A6B401C26150141001A953B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A6B401A26150141001A953B /* Localizable.strings */; };
 		2A6B402226150387001A953B /* Locals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6B402126150387001A953B /* Locals.swift */; };
+		2A6B402626150BB1001A953B /* UIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6B402526150BB1001A953B /* UIScrollViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		2A6B401B26150141001A953B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2A6B401F26150148001A953B /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		2A6B402126150387001A953B /* Locals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locals.swift; sourceTree = "<group>"; };
+		2A6B402526150BB1001A953B /* UIScrollViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtension.swift; sourceTree = "<group>"; };
 		5AD1B57F89ACA20B35D74AF8 /* Pods-OnlineCatalogueMVP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineCatalogueMVP.debug.xcconfig"; path = "Target Support Files/Pods-OnlineCatalogueMVP/Pods-OnlineCatalogueMVP.debug.xcconfig"; sourceTree = "<group>"; };
 		A6B90C7616D7E4D05181BDD1 /* Pods_OnlineCatalogueMVP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnlineCatalogueMVP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC33F328281497DAAE0C7733 /* Pods-OnlineCatalogueMVP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineCatalogueMVP.release.xcconfig"; path = "Target Support Files/Pods-OnlineCatalogueMVP/Pods-OnlineCatalogueMVP.release.xcconfig"; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				2A1F2C39261348AF001154BC /* UIViewControllerExtension.swift */,
 				2A1F2C6F2614611D001154BC /* UIViewController+storyboard.swift */,
 				2A6B40032614F382001A953B /* UserDefaults+ObjectSavable.swift */,
+				2A6B402526150BB1001A953B /* UIScrollViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				2A1F2C7E2614A21C001154BC /* SelfSizedTableView.swift in Sources */,
 				2A1F2C1226133902001154BC /* SearchedItemDisplayedModel.swift in Sources */,
 				2A1F2C372613487B001154BC /* HandledVC.swift in Sources */,
+				2A6B402626150BB1001A953B /* UIScrollViewExtension.swift in Sources */,
 				2A1F2C152613395E001154BC /* RequestResultModel.swift in Sources */,
 				2A1F2C702614611D001154BC /* UIViewController+storyboard.swift in Sources */,
 				2A1F2C4F261368C1001154BC /* UrlRouter.swift in Sources */,
