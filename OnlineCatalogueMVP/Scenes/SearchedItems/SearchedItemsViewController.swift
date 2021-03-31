@@ -9,10 +9,12 @@ import UIKit
 
 class SearchedItemsViewController: UIViewController, HandledVC {
 
+    // MARK: @IBOutlets
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var noDataLabel: UILabel!
     
+    // MARK: Properties
     private let presenter = SearchedItemsPresenter(dataService: ApiService())
     private lazy var dataSource: [SearchedItemDisplayedModel] = [] {
         didSet {
@@ -22,13 +24,14 @@ class SearchedItemsViewController: UIViewController, HandledVC {
     }
     private lazy var lastVisitedDataSource: [SearchedItemDisplayedModel] = []
     
+    // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewsOnLoad()
         setupPresenter()
     }
 
-    // MARK: Private
+    // MARK: Private methods
     private func setupViewsOnLoad() {
         self.title = Locals.searchTitle
         
@@ -80,6 +83,7 @@ class SearchedItemsViewController: UIViewController, HandledVC {
     }
 }
 
+// MARK: UITableViewDataSource
 extension SearchedItemsViewController: UITableViewDataSource {
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        dataSource.count
@@ -92,6 +96,7 @@ extension SearchedItemsViewController: UITableViewDataSource {
    }
 }
  
+// MARK: UITableViewDelegate
 extension SearchedItemsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -105,6 +110,7 @@ extension SearchedItemsViewController: UITableViewDelegate {
     }
 }
 
+// MARK: UISearchBarDelegate
 extension SearchedItemsViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()

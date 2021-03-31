@@ -10,6 +10,7 @@ import AlamofireImage
 
 class DetailedItemViewController: UIViewController, HandledVC {
 
+    // MARK: @IBOutlets
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var productNumberLabel: UILabel!
     @IBOutlet private weak var pictureImageView: UIImageView!
@@ -19,6 +20,7 @@ class DetailedItemViewController: UIViewController, HandledVC {
     @IBOutlet private weak var lastVisitedLabel: UILabel!
     @IBOutlet private weak var scrollView: UIScrollView!
     
+    // MARK: Properties
     private let presenter = DetailedItemPresenter(dataService: ApiService())
     private lazy var dataSource: [SearchedItemDisplayedModel] = [] {
         didSet {
@@ -28,6 +30,7 @@ class DetailedItemViewController: UIViewController, HandledVC {
     
     var displayedModel: SearchedItemDisplayedModel?
 
+    // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewsOnLoad()
@@ -35,7 +38,7 @@ class DetailedItemViewController: UIViewController, HandledVC {
         setupPresenter()
     }
 
-    // MARK: Private
+    // MARK: Private methods
     private func setupViewsOnLoad() {
         self.title = Locals.detailsTitle
         
@@ -138,6 +141,7 @@ class DetailedItemViewController: UIViewController, HandledVC {
     }
 }
 
+// MARK: UITableViewDataSource
 extension DetailedItemViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         dataSource.count
@@ -150,6 +154,7 @@ extension DetailedItemViewController: UITableViewDataSource {
     }
 }
 
+// MARK: UITableViewDelegate
 extension DetailedItemViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
