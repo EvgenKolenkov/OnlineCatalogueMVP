@@ -37,6 +37,8 @@
 		2A1F2C6D261460F4001154BC /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C6C261460F4001154BC /* Storyboarded.swift */; };
 		2A1F2C702614611D001154BC /* UIViewController+storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C6F2614611D001154BC /* UIViewController+storyboard.swift */; };
 		2A1F2C7E2614A21C001154BC /* SelfSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F2C7D2614A21C001154BC /* SelfSizedTableView.swift */; };
+		2A6B40012614F2C1001A953B /* ObjectSavable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6B40002614F2C1001A953B /* ObjectSavable.swift */; };
+		2A6B40042614F383001A953B /* UserDefaults+ObjectSavable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6B40032614F382001A953B /* UserDefaults+ObjectSavable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,8 @@
 		2A1F2C6C261460F4001154BC /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		2A1F2C6F2614611D001154BC /* UIViewController+storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+storyboard.swift"; sourceTree = "<group>"; };
 		2A1F2C7D2614A21C001154BC /* SelfSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizedTableView.swift; sourceTree = "<group>"; };
+		2A6B40002614F2C1001A953B /* ObjectSavable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectSavable.swift; sourceTree = "<group>"; };
+		2A6B40032614F382001A953B /* UserDefaults+ObjectSavable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+ObjectSavable.swift"; sourceTree = "<group>"; };
 		5AD1B57F89ACA20B35D74AF8 /* Pods-OnlineCatalogueMVP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineCatalogueMVP.debug.xcconfig"; path = "Target Support Files/Pods-OnlineCatalogueMVP/Pods-OnlineCatalogueMVP.debug.xcconfig"; sourceTree = "<group>"; };
 		A6B90C7616D7E4D05181BDD1 /* Pods_OnlineCatalogueMVP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnlineCatalogueMVP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC33F328281497DAAE0C7733 /* Pods-OnlineCatalogueMVP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineCatalogueMVP.release.xcconfig"; path = "Target Support Files/Pods-OnlineCatalogueMVP/Pods-OnlineCatalogueMVP.release.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 				2A1F2C0A26131073001154BC /* UIViewController+keyboard.swift */,
 				2A1F2C39261348AF001154BC /* UIViewControllerExtension.swift */,
 				2A1F2C6F2614611D001154BC /* UIViewController+storyboard.swift */,
+				2A6B40032614F382001A953B /* UserDefaults+ObjectSavable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				2A1F2C182613398E001154BC /* DataService.swift */,
 				2A1F2C362613487B001154BC /* HandledVC.swift */,
 				2A1F2C6C261460F4001154BC /* Storyboarded.swift */,
+				2A6B40002614F2C1001A953B /* ObjectSavable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -376,8 +382,10 @@
 				2A1F2C4F261368C1001154BC /* UrlRouter.swift in Sources */,
 				2A1F2C0726130B78001154BC /* String+localized.swift in Sources */,
 				2A1F2C0B26131073001154BC /* UIViewController+keyboard.swift in Sources */,
+				2A6B40042614F383001A953B /* UserDefaults+ObjectSavable.swift in Sources */,
 				2A1F2C4826135B9C001154BC /* RequestExecuter.swift in Sources */,
 				2A1F2BC32612FC2D001154BC /* AppDelegate.swift in Sources */,
+				2A6B40012614F2C1001A953B /* ObjectSavable.swift in Sources */,
 				2A1F2BEE261308EA001154BC /* UITableViewExtension.swift in Sources */,
 				2A1F2C192613398E001154BC /* DataService.swift in Sources */,
 			);

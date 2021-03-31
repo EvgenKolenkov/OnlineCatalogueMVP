@@ -8,7 +8,6 @@
 import Foundation
 
 protocol DataService {
-    
     func getSearchedData<T: Decodable>(searchedData: String, _ completion: @escaping RequestResultHandler<T>)
     func getDetailedData<T: Decodable>(id: String, _ completion: @escaping RequestResultHandler<T>)
 }
