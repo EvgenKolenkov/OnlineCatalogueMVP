@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SearchedItemDisplayedModel {
+struct SearchedItemDisplayedModel: Codable {
     let id: String?
     let productNumber: String?
     let title: String?

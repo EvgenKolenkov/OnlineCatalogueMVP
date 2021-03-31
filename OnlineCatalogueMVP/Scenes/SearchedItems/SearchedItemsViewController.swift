@@ -57,6 +57,28 @@ class SearchedItemsViewController: UIViewController, HandledVC {
             self?.noDataLabel.isHidden = !dataSource.isEmpty
         }
     }
+    
+    private func saveItemsToStorage(by indexPath: IndexPath) {
+        let userDefaults = UserDefaults.standard
+        do {
+            let lastVisited = try userDefaults.getObject(forKey: UserDefaultsKeys.lastVisited.rawValue, castTo: [SearchedItemDisplayedModel].self)
+            lastVisitedDataSource = lastVisited
+        } catch {
+            print(error.localizedDescription)
+        }
+        if !lastVisitedDataSource.contains(where: { $0.id == dataSource[indexPath.row].id }) {
+            lastVisitedDataSource.insert(dataSource[indexPath.row], at: 0)
+        }
+        if lastVisitedDataSource.count > 5 {
+            lastVisitedDataSource = lastVisitedDataSource.dropLast()
+        }
+        
+        do {
+            try userDefaults.setObject(lastVisitedDataSource, forKey: UserDefaultsKeys.lastVisited.rawValue)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
 }
 
 extension SearchedItemsViewController: UITableViewDataSource {
@@ -76,11 +98,10 @@ extension SearchedItemsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         
-        lastVisitedDataSource.append(dataSource[indexPath.row])
+        saveItemsToStorage(by: indexPath)
         
         let detailedItemVC = DetailedItemViewController.instantiate(from: .main)
         detailedItemVC.displayedModel = dataSource[indexPath.row]
-        detailedItemVC.dataSource = lastVisitedDataSource
         navigationController?.pushViewController(detailedItemVC, animated: true)
     }
 }

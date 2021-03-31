@@ -16,11 +16,12 @@ class DetailedItemViewController: UIViewController, HandledVC {
     @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var descriptionTextView: UITextView!
     @IBOutlet private weak var tableView: SelfSizedTableView!
+    @IBOutlet private weak var lastVisitedLabel: UILabel!
     
     private let presenter = DetailedItemPresenter(dataService: ApiService())
+    private lazy var dataSource: [SearchedItemDisplayedModel] = []
 
     var displayedModel: SearchedItemDisplayedModel?
-    lazy var dataSource: [SearchedItemDisplayedModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +49,12 @@ class DetailedItemViewController: UIViewController, HandledVC {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 500
+        tableView.estimatedRowHeight = 64
         tableView.tableFooterView = UIView()
+        
+        lastVisitedLabel.font = UIFont.systemFont(ofSize: 15)
+        lastVisitedLabel.textColor = .label
+        lastVisitedLabel.text = "Last visited".localized
     }
 
     private func setupDataOnLoad() {
@@ -66,6 +71,17 @@ class DetailedItemViewController: UIViewController, HandledVC {
             } else {
                 priceLabel.text = "-"
             }
+        }
+        retrieveItemsFromStorage()
+    }
+    
+    private func retrieveItemsFromStorage() {
+        let userDefaults = UserDefaults.standard
+        do {
+            let lastVisited = try userDefaults.getObject(forKey: UserDefaultsKeys.lastVisited.rawValue, castTo: [SearchedItemDisplayedModel].self)
+            dataSource = lastVisited
+        } catch {
+            print(error.localizedDescription)
         }
     }
     
